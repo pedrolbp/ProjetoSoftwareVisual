@@ -1,0 +1,23 @@
+{
+ "development": {
+    "username": "pedroNode@localhost",
+    "password": "pedronode@13",
+    "database": "pedronodedb",
+    "host": "127.0.0.1",
+    "dialect": "mysql" 
+  },
+  "test": {
+    "username": "",
+    "password": "",
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "",
+    "password": "",
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
