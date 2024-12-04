@@ -27,6 +27,11 @@ class CartItemService {
         try {
             const allCartItems = await this.CartItem.findAll({
                 where: { cartId: cartId },
+                include: [{
+                    model: db.Product,
+                    as: 'product', 
+                    attributes: ['id', 'name', 'price'] 
+                }]
             });
             return allCartItems ? allCartItems : null;
         } catch (error) {

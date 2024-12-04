@@ -56,6 +56,7 @@ class UserService{
             });
             //Se o usuário existe, ver se a senha está ok
             if(User){ 
+                console.log(User)
                // preencher depois, porque a senha precisa ser criptografada 
                //Gerar o token do user
                 const token = await auth.generateToken(User);

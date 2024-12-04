@@ -19,10 +19,12 @@ class PaymentController {
                 return acc + parseFloat(curr.totalPrice)
             }, 0)
 
-            console.log(valorTotal)
+            console.log(cart.dataValues.id)
 
             // Processar o pagamento usando o valor total do carrinho
             const payment = await this.paymentService.processPayment(userId, valorTotal, metodoPagamento);
+            await this.cartService.removeAllItemsFromCart(cart.dataValues.id);
+
             res.status(201).json({ message: 'Pagamento processado', payment });
         } catch (error) {
             console.log(error);

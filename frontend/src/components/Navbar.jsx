@@ -6,7 +6,8 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const logout = () => {
-        localStorage.removeItem('token'); // Remove o token
+        localStorage.removeItem('token');
+        localStorage.removeItem('user'); // Remove o token
         navigate('/login'); // Redireciona para a página de login
     };
 
@@ -22,6 +23,8 @@ const Navbar = () => {
                 ) : (
                     <>
                         <NavLink to="/product-maintance">Manutenção de Produtos</NavLink>
+                        <NavLink to="/suppliers">Fornecedores</NavLink>
+                        <NavLink to="/cart">Carrinho</NavLink> {/* Adicionado o link para o Carrinho */}
                         <button type="button" onClick={logout}>Sair</button>
                     </>
                 )}
@@ -31,4 +34,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

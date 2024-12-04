@@ -1,0 +1,34 @@
+.products-title {
+  text-align: center;
+  margin-block: 24px;
+}
+
+.home-products {
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  width: 1160px;
+  margin-inline: auto;
+  flex-wrap: wrap;
+}
+
+.home-product {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 20%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+  gap: 8px;
+}
+
+.home-product-description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.home-product-description p:last-child {
+  white-space: nowrap;
+}

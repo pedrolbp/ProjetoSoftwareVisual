@@ -13,6 +13,7 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/product');
 var cartsRouter = require('./routes/carts');
 var paymentRouter = require('./routes/payment');
+var supplierRouter = require('./routes/supplier'); // Importando as rotas de fornecedores
 
 var app = express();//Ativa a API com o Express
 
@@ -35,6 +36,7 @@ app.use('/users', usersRouter);//Cria a rota app/users
 app.use('/product', productsRouter);
 app.use('/carts', cartsRouter);
 app.use('/payment', paymentRouter);
+app.use('/supplier', supplierRouter); // Adiciona a rota de fornecedores
 
 // Sincronizando o Sequelize (em dev)
 //Instanciar o banco de dados
@@ -58,4 +60,3 @@ app.listen(port,()=>{
 });
 
 module.exports = app;
-

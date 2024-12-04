@@ -8,7 +8,6 @@ export default function Home() {
     
     return (
         <div>
-            <p>{token ? "Usuário logado" : "Usuário não logado"}</p>
             <ShowAllProducts/>
         </div>
     );

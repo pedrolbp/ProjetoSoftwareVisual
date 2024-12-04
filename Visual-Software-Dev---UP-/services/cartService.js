@@ -118,6 +118,18 @@ class CartService {
             throw error;
         }
     }
+
+    async removeAllItemsFromCart(cartId) {
+        try {
+            const deletedCount = await this.CartItem.destroy({
+                where: { cartId: cartId }
+            });
+            return deletedCount; 
+        } catch (error) {
+            console.error('Erro ao remover todos os itens do carrinho:', error);
+            throw error;
+        }
+    }
 }
 
 module.exports = CartService;

@@ -37,7 +37,8 @@ const UserAccountForm = ({ isLogin }) => {
         setResponseMessage(
           isLogin ? "Login bem sucedido!" : "Conta criada com sucesso!"
         );
-        localStorage.setItem('token', data.Token)
+        localStorage.setItem('token', data.token)
+        localStorage.setItem('user', JSON.stringify(data.user))
         navigate("/")
       } else {
         setResponseMessage(

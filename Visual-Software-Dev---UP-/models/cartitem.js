@@ -33,5 +33,12 @@ module.exports = (sequelize) => {
         }
     });
 
+    CartItem.associate = (models) => {
+        CartItem.belongsTo(models.Product, {
+            foreignKey: 'productId',
+            as: 'product'
+        });
+    };
+
     return CartItem;
 };

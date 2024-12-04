@@ -51,6 +51,20 @@ class CartController {
         }
     }
 
+    async getCartByUserId(req, res) {
+        const { id } = req.params;
+        try {
+            const cart = await this.cartService.findCartByUserId(id);
+            if (cart) {
+                res.status(200).json(cart);
+            } else {
+                res.status(404).json({ error: `Carrinho com ID ${id} não encontrado` });
+            }
+        } catch (error) {
+            res.status(500).json({ error: 'Ocorreu um erro ao buscar o carrinho' });
+        }
+    }
+
     // Método para atualizar um carrinho
     async updateCart(req, res) {
         const { id } = req.params;
